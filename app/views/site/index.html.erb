@@ -1,0 +1,46 @@
+
+
+<!-- <%= link_to 'Show', @task %> |
+<%= link_to 'Back', tasks_path %>
+ -->
+
+<% if current_user %>
+  <h2>Latest Tasks</h2>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>Url</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= link_to task.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <div class="panel">
+    <h1>Manage your tasks!</h1>
+    <p>A simple todo app to track your tasks</p>
+    <%= link_to "Sign-up", new_user_registration_path, :class => "button button-large" %>
+  </div>
+
+  <hr>
+
+<% end %>
+<!--
+<div class="jumbotron">
+  <h1>Manage your tasks</h1>
+  <p>...</p>
+  <table>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.description %></td>
+      </tr>
+    <% end %>
+  </table>
+</div> -->

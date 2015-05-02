@@ -1,4 +1,37 @@
 Rails.application.routes.draw do
+  root to: 'site#index'
+
+  # root to: 'tasks#index'
+
+  devise_for :users
+  resources :tasks
+  # resources :users, only: [:index, :show]
+
+#                   Prefix Verb   URI Pattern               Controller#Action
+#         new_user_session GET    /users/sign_in(.:format)  devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)  devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format) devise/sessions#destroy
+# cancel_user_registration GET    /users/cancel(.:format)   devise/registrations#cancel
+#        user_registration POST   /users(.:format)          devise/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)  devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)     devise/registrations#edit
+#                          PATCH  /users(.:format)          devise/registrations#update
+#                          PUT    /users(.:format)          devise/registrations#update
+#                          DELETE /users(.:format)          devise/registrations#destroy
+#                     root GET    /                         tasks#index
+#                    tasks GET    /tasks(.:format)          tasks#index
+#                          POST   /tasks(.:format)          tasks#create
+#                 new_task GET    /tasks/new(.:format)      tasks#new
+#                edit_task GET    /tasks/:id/edit(.:format) tasks#edit
+#                     task GET    /tasks/:id(.:format)      tasks#show
+#                          PATCH  /tasks/:id(.:format)      tasks#update
+#                          PUT    /tasks/:id(.:format)      tasks#update
+#                          DELETE /tasks/:id(.:format)      tasks#destroy
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
